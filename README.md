@@ -1,10 +1,10 @@
 # UmanIT PHP images
 
 ## Supported tags
-* `5.6-fpm-alpine`
-* `7.0-fpm-alpine`
-* `7.1-fpm-alpine`
-* `7.2-fpm-alpine`
+* `5.6`
+* `7.0`
+* `7.1`
+* `7.2`
 
 ## Presentation
 Custom php-fpm images based on official alpine versions.
