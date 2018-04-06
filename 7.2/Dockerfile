@@ -1,4 +1,4 @@
-FROM php:7.0-fpm-alpine
+FROM php:7.2-fpm-alpine
 
 # Build dependencies
 RUN apk add --no-cache --virtual .build-deps \
@@ -6,7 +6,6 @@ RUN apk add --no-cache --virtual .build-deps \
     icu-dev \
     libintl \
     libjpeg-turbo-dev \
-    libmcrypt-dev \
     libpng-dev \
     libxslt-dev \
     postgresql-dev \
@@ -16,7 +15,6 @@ RUN apk add --no-cache --virtual .build-deps \
     iconv \
     intl \
     mbstring \
-    mcrypt \
     opcache \
     pgsql \
     xsl \
