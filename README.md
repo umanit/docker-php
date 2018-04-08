@@ -14,6 +14,7 @@ Additional PHP extensions are installed, listed below.
 ## Additional PHP extensions
 * bcmath
 * iconv
+* imagick
 * intl
 * mbstring
 * mcrypt (except for PHP 7.2)
