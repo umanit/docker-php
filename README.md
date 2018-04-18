@@ -22,3 +22,8 @@ Additional PHP extensions are installed, listed below.
 * pgsql
 * xsl
 * zip
+
+## Notes
+The PHP images are known to have an intl not working, cf. this GitHub thread: https://github.com/docker-library/php/issues/240
+
+The following fix has been made to correct the problem: https://github.com/docker-library/php/issues/240#issuecomment-305038173
