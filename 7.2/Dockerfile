@@ -20,6 +20,9 @@ RUN apk add --no-cache --virtual .build-deps \
     intl \
     mbstring \
     opcache \
+    pdo \
+    pdo_mysql \
+    pdo_pgsql \
     pgsql \
     xsl \
     zip \
