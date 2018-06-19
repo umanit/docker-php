@@ -18,6 +18,7 @@ Additional PHP extensions are installed, listed below.
 * intl
 * mbstring
 * mcrypt (except for PHP 7.2)
+* mysqli
 * opcache
 * pdo
 * pdo_mysql

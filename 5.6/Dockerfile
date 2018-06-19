@@ -21,6 +21,7 @@ RUN apk add --no-cache --virtual .build-deps \
     intl \
     mbstring \
     mcrypt \
+    mysqli \
     opcache \
     pdo \
     pdo_mysql \
