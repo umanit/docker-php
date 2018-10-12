@@ -5,7 +5,9 @@ RUN apk add --no-cache --virtual .build-deps \
     $PHPIZE_DEPS \
     freetype-dev \
     icu-dev \
+    imap-dev \
     imagemagick-dev \
+    libexif-dev \
     libintl \
     libjpeg-turbo-dev \
     libpng-dev \
@@ -16,7 +18,9 @@ RUN apk add --no-cache --virtual .build-deps \
 # PHP extensions
 && docker-php-ext-install \
     bcmath \
+    exif \
     iconv \
+    imap \
     intl \
     mbstring \
     mysqli \
