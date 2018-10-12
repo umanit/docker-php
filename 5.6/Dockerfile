@@ -1,11 +1,13 @@
-FROM php:5.6-fpm-alpine
+FROM php:5.6.38-fpm-alpine3.8
 
 # Build dependencies
 RUN apk add --no-cache --virtual .build-deps \
     $PHPIZE_DEPS \
     freetype-dev \
     icu-dev \
+    imap-dev \
     imagemagick-dev \
+    libexif-dev \
     libintl \
     libjpeg-turbo-dev \
     libmcrypt-dev \
@@ -17,7 +19,9 @@ RUN apk add --no-cache --virtual .build-deps \
 # PHP extensions
 && docker-php-ext-install \
     bcmath \
+    exif \
     iconv \
+    imap \
     intl \
     mbstring \
     mcrypt \
