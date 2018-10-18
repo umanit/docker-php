@@ -33,6 +33,8 @@ Additional PHP extensions are installed, listed below.
 * zip
 
 ## Build commands
+* `make all`
+* **OR**
 * `docker build --no-cache -t umanit/php:5.6 ./5.6/ && docker push umanit/php:5.6`
 * `docker build --no-cache -t umanit/php:7.0 ./7.0/ && docker push umanit/php:7.0`
 * `docker build --no-cache -t umanit/php:7.1 ./7.1/ && docker push umanit/php:7.1`
