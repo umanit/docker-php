@@ -27,6 +27,8 @@ Additional PHP extensions are installed, listed below.
 * pdo_mysql
 * pdo_pgsql
 * pgsql
+* soap
+* xdebug
 * xsl
 * zip
 

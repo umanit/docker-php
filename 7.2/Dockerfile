@@ -12,6 +12,7 @@ RUN apk add --no-cache --virtual .build-deps \
     libjpeg-turbo-dev \
     libpng-dev \
     libtool \
+    libxml2-dev \
     libxslt-dev \
     postgresql-dev \
 && export CFLAGS="$PHP_CFLAGS" CPPFLAGS="$PHP_CPPFLAGS" LDFLAGS="$PHP_LDFLAGS" \
@@ -29,12 +30,18 @@ RUN apk add --no-cache --virtual .build-deps \
     pdo_mysql \
     pdo_pgsql \
     pgsql \
+    soap \
     xsl \
     zip \
+# Install gd
 && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 && docker-php-ext-install -j "$(nproc)" gd \
+# Install imagemagick
 && pecl install imagick && docker-php-ext-enable imagick \
 && apk add --no-cache --virtual .imagick-runtime-deps imagemagick \
+## Install xdebug
+&& pecl install xdebug && docker-php-ext-enable xdebug \
+&& echo "xdebug.remote_enable=1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
 # Clean no more needed dependencies
 && runDeps="$( \
     scanelf --needed --nobanner --recursive /usr/local \
