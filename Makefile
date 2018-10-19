@@ -1,14 +1,30 @@
+TAGS=5.6 7.0 7.1 7.2
+
+define build_image
+	docker build --no-cache -t umanit/php:$(1) ./$(1)/
+endef
+
+define push_image
+	docker push umanit/php:$(1)
+endef
+
 build:
-	docker build --no-cache -t umanit/php:5.6 ./5.6/
-	docker build --no-cache -t umanit/php:7.0 ./7.0/
-	docker build --no-cache -t umanit/php:7.1 ./7.1/
-	docker build --no-cache -t umanit/php:7.2 ./7.2/
+ifndef tag
+	for available_tag in $(TAGS) ; do \
+		$(call build_image,$$available_tag) ; \
+	done
+else
+	$(call build_image,$(tag))
+endif
 
 push:
-	docker push umanit/php:5.6
-	docker push umanit/php:7.0
-	docker push umanit/php:7.1
-	docker push umanit/php:7.2
+ifndef tag
+	for available_tag in $(TAGS) ; do \
+		$(call push_image,$$available_tag) ; \
+	done
+else
+	$(call push_image,$(tag))
+endif
 
 all:
 	make build
