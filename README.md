@@ -45,4 +45,5 @@ The PHP images are known to have an intl not working, cf. this GitHub thread: ht
 
 The following fix has been made to correct the problem: https://github.com/docker-library/php/issues/240#issuecomment-305038173
 
-Xdebug is preconfigured with a remote host `host.docker.internal`.
+Xdebug is preconfigured with `xdebug.remote_host=host.docker.internal`
+and a `xdebug.remote_enable=1`.
