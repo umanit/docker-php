@@ -33,6 +33,7 @@ RUN apk add --no-cache --virtual .build-deps \
     pdo_pgsql \
     pgsql \
     soap \
+    sockets \
     xsl \
     zip \
 # Install gd
