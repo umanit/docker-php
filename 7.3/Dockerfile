@@ -1,4 +1,4 @@
-FROM php:7.2.17-fpm-alpine3.9
+FROM php:7.3.4-fpm-alpine3.9
 
 # Build dependencies
 RUN apk add --no-cache --virtual .build-deps \
@@ -14,6 +14,7 @@ RUN apk add --no-cache --virtual .build-deps \
     libtool \
     libxml2-dev \
     libxslt-dev \
+    libzip-dev \
     postgresql-dev \
 && export CFLAGS="$PHP_CFLAGS" CPPFLAGS="$PHP_CPPFLAGS" LDFLAGS="$PHP_LDFLAGS" \
 # PHP extensions

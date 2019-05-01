@@ -3,8 +3,9 @@
 ## Supported tags (with base image used for building)
 * `5.6` (`5.6.38-fpm-alpine3.8`)
 * `7.0` (`7.0.32-fpm-alpine3.7`)
-* `7.1` (`7.1.22-fpm-alpine3.8`)
-* `7.2` (`7.2.10-fpm-alpine3.8`)
+* `7.1` (`7.1.28-fpm-alpine3.9`)
+* `7.2` (`7.2.17-fpm-alpine3.9`)
+* `7.3` (`7.3.4-fpm-alpine3.9`)
 
 ## Presentation
 Custom php-fpm images based on official alpine versions.
@@ -19,7 +20,7 @@ Additional PHP extensions are installed, listed below.
 * imap
 * intl
 * mbstring
-* mcrypt (except for PHP 7.2)
+* mcrypt (except for PHP >= 7.2)
 * mysql (only for PHP 5.6)
 * mysqli
 * opcache
@@ -40,6 +41,7 @@ Additional PHP extensions are installed, listed below.
 * `docker build --no-cache -t umanit/php:7.0 ./7.0/ && docker push umanit/php:7.0`
 * `docker build --no-cache -t umanit/php:7.1 ./7.1/ && docker push umanit/php:7.1`
 * `docker build --no-cache -t umanit/php:7.2 ./7.2/ && docker push umanit/php:7.2`
+* `docker build --no-cache -t umanit/php:7.3 ./7.3/ && docker push umanit/php:7.3`
 
 ## Notes
 The PHP images are known to have an intl not working, cf. this GitHub thread: https://github.com/docker-library/php/issues/240

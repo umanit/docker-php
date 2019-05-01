@@ -58,7 +58,7 @@ RUN apk add --no-cache --virtual .build-deps \
 && apk add --virtual .rundeps $runDeps \
 && apk del .build-deps \
 # Fix intl
-&& apk add gnu-libiconv --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
+&& apk add gnu-libiconv --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted
 
 ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so php
 
